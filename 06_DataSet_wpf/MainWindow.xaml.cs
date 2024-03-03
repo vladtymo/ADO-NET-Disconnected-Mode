@@ -46,6 +46,9 @@ namespace _06_DataSet_wpf
 
                 // bind table to DataGrid
                 dataGrid.ItemsSource = set.Tables["MyTable"].DefaultView;
+
+                // access elements
+                //set.Tables[0].Rows[0][2].ToString();
             }
             catch (Exception ex)
             {
@@ -58,7 +61,7 @@ namespace _06_DataSet_wpf
             try
             {
                 // update server data (sync DataSet with database)
-                da.Update(set);
+                da.Update(set.Tables["MyTable"]);
             }
             catch (Exception ex)
             {
